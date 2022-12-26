@@ -4,24 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div>
     <h1>Auto</h1>
-    <table>
+    <table class="table table-dark">
         <tread>
             <tr>
-                <th>Brand</th>
-                <th>Series</th>
-                <th>Year Of Release</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Series</th>
+                <th scope="col">Year Of Release</th>
             </tr>
         </tread>
-        <tr>
-        <tr th:each="car :${cars}">
+        <tbody>
+        <tr th:each="car:${cars}">
             <td th:text="${car.getBrand()}"></td>
             <td th:text="${car.getSeries()}"></td>
             <td th:text="${car.getYearOfRelease()}"></td>
+
         </tr>
+        </tbody>
+        <tr>
+
     </table>
 </div>
 </body>
