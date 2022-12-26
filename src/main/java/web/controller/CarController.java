@@ -22,10 +22,11 @@ public class CarController {
     }
 
     @GetMapping(value = "/cars")
-    public String printCar(@RequestParam(value = "5")int count, ModelMap model1){
-        model1.addAttribute("cars",carService.showCar(count));
+    public String printCar(@RequestParam(defaultValue = "5") int count, ModelMap model) {
+        model.addAttribute("cars", carService.showCar(count));
         return "cars";
+
+
     }
 
-
-}
+        }
